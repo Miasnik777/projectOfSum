@@ -1,0 +1,89 @@
+.container{
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+*,html,body{
+    background-color: #3F3F3F;
+color: #fff;
+margin: 0;
+padding: 0;
+}
+.text-title{
+    font-size: 32px;
+    text-align: center;
+}
+.wrapper{
+    padding-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.btn-big{
+    margin-top: 50px;
+    width: 413px;
+    height: 408px;
+    border:2px solid #C0C0C0;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+main{
+    padding-top: 40px;
+}
+.second-content{
+    display: flex;
+    flex-direction: column;
+}
+.obj{
+    display: flex;
+}
+.lef-title{
+    padding-left: 60px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+input{
+    margin-right: 29px;
+    margin-bottom: 30px;
+    background-color: red;
+}
+.button-link{
+ width: 204px;
+ height: 72px;
+    border:5px solid;
+    border-color: #BE86E9;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:980px){
+    .wrapper{
+        justify-content: center;
+        padding-top: 0;
+    }
+    .second-content{
+        padding-top: 30px;
+    }
+    .lef-title{
+        padding-left: 0;
+        margin-bottom: 40px;
+    }
+    .btn-big{
+        text-align: center;
+    }
+    .btn-cont{
+        display: flex;
+        justify-content: center;
+    }
+
+}
+@media(max-width:309px){
+.text-title{
+    font-size: 10vw;
+}
+}
