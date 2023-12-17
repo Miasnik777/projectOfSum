@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка видео</title>
+</head>
+<style>
+    *,html{
+        margin: 0;
+        padding: 0;
+        color:#AC92E1;
+    }
+    a{
+        color:white;
+        text-decoration: none;
+    }
+    body{
+        background-color: #3F3F3F;
+
+    }
+    .container{
+        max-width: 1200px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    header{
+        background-color: #656565;
+        padding: 10px 0;
+    }
+    .circ{
+        width: 40px;
+        height: 40px;
+        border-radius: 70px;
+        background-color: #D9D9D9;
+    }
+    .nav{
+        display: flex;
+        align-items: center ;
+        justify-content: space-between;
+    }
+    .menu{
+        display: flex;
+        list-style: none;
+        padding-left: 57px;
+    }
+
+    li{
+        padding-right: 30px;
+
+    }
+    .wrapper{
+        display: flex;
+        align-items: center;
+        background-color:#656565 ;
+
+    }
+    .logo{
+        width: 40px;
+        height: 40px;
+    }
+    .wrapper-two{
+        width: 700px;
+        background-color: #515151;
+        margin: 0 auto;
+    }
+    .btn{
+        color:white;
+        font-size: 25px;
+        padding: 115px 98px;
+        background-color: #474747;
+        border-radius: 50px;
+        border-color:  #474747 #AC92E1;
+        border-style: solid;
+
+    }
+    .moni{
+        padding-top: 70px;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 140px;
+    }
+  .two-mini{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  hr{
+    height: 1px;
+    width: 250px;
+    background-color: #989898;
+  }
+  .text-two{
+    padding: 0 15px;
+    font-size: 25px;
+    color: white;
+  }
+  .text-second{
+    font-size: 20px;
+    height: 100vh;
+    color:#A1A1A1;
+    text-align: center;
+    padding: 147px 0;
+  }
+</style>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <div class="wrapper">
+            <img class="logo" src={% static 'main/img/group 23.png' %} alt="">
+            <ul class="menu">
+                <li>О продукте</li>
+            <li>О нас</li>
+            <li>Контакты</li>
+            <li>Вопросы</li>
+        </ul>
+    </div>
+        <div class="circ"></div>
+    </nav>
+        </div>
+    </header>
+    <main>
+        <section class="sect">
+        <div class="container">
+            <div class="big-wrapper">
+            <div class="wrapper-two">
+                <div class="moni">
+                    <a href="#" class="btn">Загрузите запись</a>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            {{ form.as_p }}
+                        <p>
+                            <button type="submit">Отправить</button>
+
+                        </p>
+
+
+                    </form>
+
+            </div>
+        </div>
+            </div>
+        </div>
+        </section>
+        <section class="sect-2">
+            <div class="container">
+                <div class="wrapper-two">
+                    <div class="two-mini">
+                    <hr>
+                    <p class="text-two">Недавнее</p>
+                    <hr>
+
+                </div>
+
+                   </div>
+
+                    {% if video %}
+                        {% for el in video %}
+                            <div>
+                            <h3>{{ el.title }}</h3>
+                            <h3>{{ el.date }}</h3>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-second">У вас пока нет проектов. Загрузите свою первую запись!</p>
+                    {% endif %}
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
